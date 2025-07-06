@@ -127,10 +127,10 @@ Daily Scrum toplantısı örneği **`.jpeg` formatında Drive linki ile birlikte
 ### Sprint Review
 
 **Alınan Kararlar:**
-- Ürünün sağlık alanında özellikle **görüntü** üzerine olacağına karar verildi.  
-- Kullanılacak **yapay zeka modelleri** belirlendi.  
-- **Veri setleri** incelenmeye ve seçilmeye başlandı.  
-- Ürünün **genel akışı** ve **teması** belirlendi.  
+- Ürünün sağlık alanında özellikle görüntü üzerine olacağına karar verildi.  
+- Kullanılacak yapay zeka modelleri belirlendi.  
+- Veri setleri incelenmeye ve seçilmeye başlandı.  
+- Ürünün genel akışı ve teması belirlendi.  
 
 ---
 
