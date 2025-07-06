@@ -2,18 +2,18 @@
 
 ## Takım Üyeleri
 
-- **Eylül Medine Kamar**  
-- **Esra Gökce**  
-- **Helin Yaren Batı**  
-- **Tolga Kaya**  
-- **Şevval Savaş**  
+- **Eylül Medine Kamar** : Developer  
+- **Esra Gökce** : Developer 
+- **Helin Yaren Batı** : Developer  
+- **Tolga Kaya** : Product Owner  
+- **Şevval Savaş** : Scrum Master 
 
 
 ---
 
 ## Görev Dağılımı
 
-### Eylül Medine Kamar (AI/ML Engineer, Developer)
+### Eylül Medine Kamar (AI/ML Engineer)
 **Sorumluluklar:**
 - Medical imaging datasets hazırlama ve preprocessing  
 - Veri işaretleme (annotation) koordinasyonu  
@@ -21,7 +21,7 @@
 - Training data quality control  
 - Model performance evaluation  
 
-### Esra Gökce (AI/ML Engineer, Developer)
+### Esra Gökce (AI/ML Engineer)
 **Sorumluluklar:**
 - YOLOv8 model architecture optimization  
 - Real-time inference pipeline  
