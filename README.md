@@ -1,1 +1,140 @@
-# Bootcamp153
+# Bootcamp Grup 153
+
+## Takım Üyeleri
+
+- **Eylül Medine Kamar**  
+- **Esra Gökce**  
+- **Helin Yaren Batı**  
+- **Tolga Kaya**  
+- **Şevval Savaş**  
+
+
+---
+
+## Görev Dağılımı
+
+### Eylül Medine Kamar (AI/ML Engineer)
+**Sorumluluklar:**
+- Medical imaging datasets hazırlama ve preprocessing  
+- Veri işaretleme (annotation) koordinasyonu  
+- YOLOv8 model training ve fine-tuning  
+- Training data quality control  
+- Model performance evaluation  
+
+### Esra Gökce (AI/ML Engineer)
+**Sorumluluklar:**
+- YOLOv8 model architecture optimization  
+- Real-time inference pipeline  
+- Bounding box koordinatları hesaplama  
+- Model deployment ve serving  
+- Performance monitoring ve optimization  
+
+### Helin Yaren Batı (Full-Stack Developer)
+**Sorumluluklar:**
+- FastAPI ile API endpoints oluşturma  
+- React ile kullanıcı arayüzü geliştirme  
+- Dosya yükleme ve işleme  
+- Database operations  
+- Frontend-Backend integration  
+- API documentation  
+
+### Tolga Kaya (NLP Engineer & Project Owner)
+**Sorumluluklar:**
+- Gemini API integration  
+- Prompt engineering (medical context)  
+- RAG system implementation  
+- Medical literature database hazırlama  
+- Response quality assurance  
+
+### Şevval Savaş (DevOps & Scrum Master)
+**Sorumluluklar:**
+- Deployment ve hosting  
+- CI/CD pipeline kurulumu  
+- Demo hazırlığı ve presentation  
+- Documentation ve testing  
+- External project coordination (diğer görevlerin)
+
+---
+
+## Ürün İsmi: **VEZİN**
+
+### Ürün Açıklaması
+**VEZİN**, röntgen ve MR gibi tıbbi görüntülerdeki anomalileri tespit edip, bu bulguları tıbbi dilde açıklayan bir web uygulamasıdır. Sistem, hem doktorlar için klinik destek sağlayarak hem de tıp öğrencilerinin eğitimine katkıda bulunarak sağlıkta yapay zeka ve eğitimde yapay zekayı aynı potada eritir.
+
+### Ürünün Amacı
+**Sorun:** Doktorların zamanla yarışarak onlarca görüntüye bakmak zorunda olması (günde 300+ hasta) → hata riski, dikkat dağınıklığı  
+**Çözüm:** Otomatik anomali tespiti ve açıklaması → hızlı ön değerlendirme, eğitim desteği, ikincil görüş etkisi  
+**Özgünlük:** Çoğu görüntüleme projesi sınıflandırmada kalırken, bu proje anlatma + eğitme boyutu ekliyor.
+
+---
+
+## Ürünün Özellikleri
+
+### Doktor Modu
+- **Otomatik Anomali Tespiti:** YOLO modeli ile görüntüdeki anormallikleri kutularla işaretleme  
+- **Tıbbi Açıklama:** LLM (Gemini) ile tespit edilen anomalileri tıbbi dilde açıklama  
+- **Görsellik:** Görüntü + kutular (vizüel) + açıklamalar (metinsel)  
+- **Hızlı Ön Değerlendirme:** Doktorların iş yükünü azaltma  
+
+### Öğrenci Modu (RADEDU Eğitim Sistemi)
+- **Etkileşimli Öğrenme:** Öğrenciden önce cevap isteme  
+- **Karşılaştırmalı Analiz:** Öğrenci cevabı ile doğru cevabı karşılaştırma  
+- **Akıllı Geri Bildirim:** Gemini API ile detaylı değerlendirme  
+- **Eğitimsel Açıklamalar:** Tıp eğitimi için özelleştirilmiş içerik  
+
+---
+
+## RAG + LLM Kombinasyonu
+
+- **Kaynak Destekli Açıklamalar:** Fleischner Society 2017 rehberi gibi tıbbi kaynaklardan bilgi alma  
+- **Kişiselleştirilmiş Yorumlama:** Doktor notu + görüntü kombinasyonu ile detaylı analiz  
+- **Güncel Tıbbi Bilgi:** Sürekli güncellenen tıbbi literatür desteği  
+
+---
+
+## Hedef Kitle
+- Doktorlar  
+- Tıp Öğrencileri  
+- Klinikler / Fakülteler  
+
+---
+
+## Juriye Not
+> *(Buraya özel bir not ekleyecekseniz yazabilirsiniz.)*
+---
+
+## Sprint 1
+
+### Sprint içinde tamamlanması tahmin edilen puan: **100 Puan**
+
+**Puan tamamlama mantığı:**  
+Toplamda proje boyunca tamamlanması gereken 300 puanlık backlog bulunmaktadır. 3 sprint'e bölündüğünde ilk sprintte 100 ile başlaması gerektiğine karar verildi.
+
+---
+
+### Daily Scrum
+Daily Scrum toplantılarının zamansal sebeplerden ötürü **Whatsapp üzerinden** yapılmasına karar verilmiştir.  
+Daily Scrum toplantısı örneği **`.jpeg` veya `.docx`** formatında `README` ile birlikte paylaşılacaktır.
+
+---
+
+### Sprint Board Update
+> *(Notion Linki)*
+
+---
+
+### Sprint Review
+
+**Alınan Kararlar:**
+- Ürünün sağlık alanında özellikle **görüntü** üzerine olacağına karar verildi.  
+- Kullanılacak **yapay zeka modelleri** belirlendi.  
+- **Veri setleri** incelenmeye ve seçilmeye başlandı.  
+- Ürünün **genel akışı** ve **teması** belirlendi.  
+
+---
+
+### Sprint Retrospective
+
+- Scrum Master ve Product Owner belirlenmiştir.  
+- Görev dağılımı, takım üyelerinin ilgi alanlarına ve iş yüküne göre gerçekleştirilmiştir.  
+
