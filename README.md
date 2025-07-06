@@ -13,7 +13,7 @@
 
 ## Görev Dağılımı
 
-### Eylül Medine Kamar (AI/ML Engineer)
+### Eylül Medine Kamar (AI/ML Engineer, Developer)
 **Sorumluluklar:**
 - Medical imaging datasets hazırlama ve preprocessing  
 - Veri işaretleme (annotation) koordinasyonu  
@@ -21,7 +21,7 @@
 - Training data quality control  
 - Model performance evaluation  
 
-### Esra Gökce (AI/ML Engineer)
+### Esra Gökce (AI/ML Engineer, Developer)
 **Sorumluluklar:**
 - YOLOv8 model architecture optimization  
 - Real-time inference pipeline  
