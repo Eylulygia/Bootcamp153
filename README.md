@@ -114,12 +114,13 @@ Toplamda proje boyunca tamamlanması gereken 300 puanlık backlog bulunmaktadır
 
 ### Daily Scrum
 Daily Scrum toplantılarının zamansal sebeplerden ötürü **Whatsapp üzerinden** yapılmasına karar verilmiştir.  
-Daily Scrum toplantısı örneği **`.jpeg` veya `.docx`** formatında `README` ile birlikte paylaşılacaktır.
-
+Daily Scrum toplantısı örneği **`.jpeg` veya `.docx`** formatında Drive linki ile birlikte paylaşılacaktır.
+Google Meet Toplantı Ekran Görüntüleri
+Whatsapp Ekran Görüntüleri 
 ---
 
 ### Sprint Board Update
-> *(Notion Linki)*
+<img width="835" height="829" alt="Image" src="https://github.com/user-attachments/assets/e2ba4acd-d865-441a-a0f8-012bdc49f26c" />
 
 ---
 
