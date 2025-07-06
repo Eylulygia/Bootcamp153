@@ -99,10 +99,6 @@
 
 ---
 
-## Juriye Not
-> *(Buraya özel bir not ekleyecekseniz yazabilirsiniz.)*
----
-
 ## Sprint 1
 
 ### Sprint içinde tamamlanması tahmin edilen puan: **100 Puan**
@@ -114,9 +110,13 @@ Toplamda proje boyunca tamamlanması gereken 300 puanlık backlog bulunmaktadır
 
 ### Daily Scrum
 Daily Scrum toplantılarının zamansal sebeplerden ötürü **Whatsapp üzerinden** yapılmasına karar verilmiştir.  
-Daily Scrum toplantısı örneği **`.jpeg` veya `.docx`** formatında Drive linki ile birlikte paylaşılacaktır.
-Google Meet Toplantı Ekran Görüntüleri https://drive.google.com/drive/folders/1wCZDMRQ7IockN_D0YT-pZ2V6VZ-9cMXZ?usp=sharing
-Whatsapp Ekran Görüntüleri 
+Daily Scrum toplantısı örneği **`.jpeg` formatında Drive linki ile birlikte paylaşılacaktır.
+
+[Google Meet Toplantı Ekran Görüntüleri](https://drive.google.com/drive/folders/1wCZDMRQ7IockN_D0YT-pZ2V6VZ-9cMXZ?usp=sharing)
+
+[Whatsapp Ekran Görüntüleri](https://drive.google.com/drive/folders/1GR3ou2x0oFUVNIUA04mgGUNG7XnEPVQP?usp=sharing)
+
+
 ---
 
 ### Sprint Board Update
