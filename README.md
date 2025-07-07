@@ -123,7 +123,11 @@ Daily Scrum toplantısı örneği **`.jpeg` formatında Drive linki ile birlikte
 <img width="835" height="829" alt="Image" src="https://github.com/user-attachments/assets/e2ba4acd-d865-441a-a0f8-012bdc49f26c" />
 
 ---
+### Ürünün Durumu
 
+
+
+---
 ### Sprint Review
 
 **Alınan Kararlar:**
