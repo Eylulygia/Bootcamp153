@@ -124,7 +124,13 @@ Daily Scrum toplantısı örneği **`.jpeg` formatında Drive linki ile birlikte
 
 ---
 ### Ürünün Durumu
-
+<img width="1015" height="576" alt="Image" src="https://github.com/user-attachments/assets/b0db15b7-aea5-495f-a48e-4018a9fee2d9" />
+<img width="1016" height="570" alt="Image" src="https://github.com/user-attachments/assets/749f9249-9474-45e6-ade7-33e526f60482" />
+<img width="1015" height="566" alt="Image" src="https://github.com/user-attachments/assets/071e192e-b665-42f1-8c65-683279068bf5" />
+<img width="1002" height="563" alt="Image" src="https://github.com/user-attachments/assets/135331b8-e378-4ae5-9cce-27a1a36dabfe" />
+<img width="899" height="504" alt="Image" src="https://github.com/user-attachments/assets/46c5efa6-7e8b-442f-b0f3-348fcebcc2bd" />
+<img width="897" height="507" alt="Image" src="https://github.com/user-attachments/assets/2f9fc2dd-8a41-4cbf-97ee-5c187b7eeb7f" />
+<img width="908" height="506" alt="Image" src="https://github.com/user-attachments/assets/568238e4-d918-47d0-a790-dd2a5fafeeaf" />
 
 
 ---
