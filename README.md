@@ -147,5 +147,7 @@ Daily Scrum toplantısı örneği **`.jpeg` formatında Drive linki ile birlikte
 ### Sprint Retrospective
 
 - Scrum Master ve Product Owner belirlenmiştir.  
-- Görev dağılımı, takım üyelerinin ilgi alanlarına ve iş yüküne göre gerçekleştirilmiştir.  
-
+- Görev dağılımı, takım üyelerinin ilgi alanlarına ve iş yüküne göre gerçekleştirilmiştir.
+- İletişim etkin şekilde sürdürüldü ve toplantılara zamanında katınıldı.
+- Toplantılar dışında Whatsapptan sürekli iletişim kuruldu.
+- Projenin temel yapısı ve modülleri netleşti.
