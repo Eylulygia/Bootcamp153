@@ -175,9 +175,13 @@ Daily Scrum toplantısı örneği **`.jpeg` formatında Drive linki ile birlikte
 ---
 
 ### Sprint Board Update
+<img width="840" height="644" alt="Image" src="https://github.com/user-attachments/assets/a1d00fcf-c0af-4e7e-b899-e2ee193d8dd5" />
 
 ---
 ### Ürünün Durumu
-
+- Datasetinde Yolo kullanarak etiketlemeler yapıldı.
+- Etiketlemelere göre 3 çeşit beyin kanseri tipi belirlenmiştir:Pituitary,Glioma ve Meningioma
+- Etiketleme sürecin fotoğrafları aşağıdadır:
+  
 
 ---
