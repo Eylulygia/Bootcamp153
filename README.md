@@ -198,7 +198,7 @@ Daily Scrum toplantısı örneği `.jpeg` formatında Drive linki ile birlikte p
 - Ürünün beyin tümorleri üzerine olacağına karar verildi.
 - Backend & Frontend ksımlarının nasıl ilerleneceğine karar verildi.
 - Yolo modeli ile datasetinde işaretlemeler yapıldı ve model eğitildi.
-- REACT denemlerine başlandı.
+- REACT denemelerine başlandı.
 - Tıbbı metin yazımına başlandı.
 
 ---
