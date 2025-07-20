@@ -206,7 +206,7 @@ Daily Scrum toplantısı örneği `.jpeg` formatında Drive linki ile birlikte p
 ### Sprint Retrospective
 
 - Görev dağılımına uygun hareket edilmiştir. 
-- Datasetine göre etiklenmelerin yapılması projenin geri kalanı için büyük bir ilerleme oldu.
+- Datasetine göre etiketlenmelerin yapılması projenin geri kalanı için büyük bir ilerleme oldu.
 - İletişim etkin şekilde sürdürüldü ve toplantılara zamanında katınıldı.
 - Toplantılar dışında Whatsapptan sürekli iletişim kuruldu.
 - Projenin konusu  ve süreci daha detaylandırıldı.
