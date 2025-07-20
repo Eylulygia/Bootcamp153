@@ -183,5 +183,32 @@ Daily Scrum toplantısı örneği **`.jpeg` formatında Drive linki ile birlikte
 - Etiketlemelere göre 3 çeşit beyin kanseri tipi belirlenmiştir:Pituitary,Glioma ve Meningioma
 - Etiketleme sürecin fotoğrafları aşağıdadır:
   
+![Image](https://github.com/user-attachments/assets/2283a701-68f6-450c-a3d5-3d1c23897270)
+![Image](https://github.com/user-attachments/assets/6fa1e72c-dc7e-4c97-aa94-e60c5ad63dce)
+![Image](https://github.com/user-attachments/assets/689ca29c-efa4-4fa7-88d5-801b38bacd85)
+![Image](https://github.com/user-attachments/assets/35cb715c-2ec9-463d-a4aa-05545adc8abd)
+![Image](https://github.com/user-attachments/assets/6a27de06-a8c0-4a3f-b813-dd5ca9e6435f)
+![Image](https://github.com/user-attachments/assets/6a5d94a5-1b12-4b35-8dc8-ee59bc15b56f)
+![Image](https://github.com/user-attachments/assets/bd021251-c24b-4e8f-bc15-4ee7ba64501e)
+
+---
+### Sprint Review
+
+**Alınan Kararlar:**
+- Ürünün beyin tümorleri üzerine olacağına karar verildi.
+- Backend & Frontend ksımlarının nasıl ilerleneceğine karar verildi.
+- Yolo modeli ile datasetinde işaretlemeler yapıldı ve model eğitildi.
+- REACT denemlerine başlandı.
+- Tıbbı metin yazımına başlandı.
+
+---
+
+### Sprint Retrospective
+
+- Görev dağılımına uygun hareket edilmiştir. 
+- Datasetine göre etiklenmelerin yapılması projenin geri kalanı için büyük bir ilerleme oldu.
+- İletişim etkin şekilde sürdürüldü ve toplantılara zamanında katınıldı.
+- Toplantılar dışında Whatsapptan sürekli iletişim kuruldu.
+- Projenin konusu  ve süreci daha detaylandırıldı.
 
 ---
