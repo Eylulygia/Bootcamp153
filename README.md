@@ -239,7 +239,14 @@ Daily Scrum toplantısı örneği `.jpeg` formatında Drive linki ile birlikte p
 ---
 ### Ürünün Durumu
 -Ürünün son hali aşağıda görüldüğü gibidir.
-
+![Image](https://github.com/user-attachments/assets/39f6fca8-e570-425d-ac8c-f949ab14d619)
+![Image](https://github.com/user-attachments/assets/05bdc33c-01ac-4b48-8647-d6aa474082df)
+![Image](https://github.com/user-attachments/assets/afd70a2f-8bbf-4893-8cd2-6f7ad13a50b5)
+![Image](https://github.com/user-attachments/assets/7a410def-c8c0-4026-a439-ed3f6115d5fc)
+![Image](https://github.com/user-attachments/assets/cf5f3b04-1e54-4936-9e3b-4b1a4fa54ade)
+![Image](https://github.com/user-attachments/assets/8ed8d05c-2b35-4ec7-9fbe-e17bf616e671)
+![Image](https://github.com/user-attachments/assets/d1c4be55-9d4a-4c5a-8d85-f60eb5d0a431)
+![Image](https://github.com/user-attachments/assets/39579192-079d-4b90-a5df-0f1afd7498af)
 
 ---
 ### Sprint Review
