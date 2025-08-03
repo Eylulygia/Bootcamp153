@@ -200,7 +200,7 @@ Daily Scrum toplantısı örneği `.jpeg` formatında Drive linki ile birlikte p
 - Yolo modeli ile datasetinde işaretlemeler yapıldı ve model eğitildi.
 - REACT denemelerine başlandı.
 - Tıbbı metin yazımına başlandı.
-
+- 
 ---
 
 ### Sprint Retrospective
@@ -234,25 +234,30 @@ Daily Scrum toplantısı örneği `.jpeg` formatında Drive linki ile birlikte p
 ---
 
 ### Sprint Board Update
-
+<img width="1071" height="884" alt="Image" src="https://github.com/user-attachments/assets/b04bc3b1-ef5b-44e2-bd30-40f68daaf8f0" />
 
 ---
 ### Ürünün Durumu
-- Datasetinde Yolo kullanarak etiketlemeler yapıldı.
-- Etiketlemelere göre 3 çeşit beyin kanseri tipi belirlenmiştir:Pituitary,Glioma ve Meningioma
-- Etiketleme sürecin fotoğrafları aşağıdadır:
-  
+-Ürünün son hali aşağıda görüldüğü gibidir.
+
 
 ---
 ### Sprint Review
 
 **Alınan Kararlar:**
-
+- Hata kodları temizlendi.
+- Tıbbı metin gerekli düzenlemelerden geçti ve ayarlandı.
+- Doktor ve Öğrenci modları websitede detaylandırıldı.
+- Yapay zeka modelleri eğitildi.
 
 ---
 
 ### Sprint Retrospective
 
-
+- Görev dağılımına uygun hareket edilmiştir. 
+- Toplatılarda ürünün sorunları üzerine konuşuldu ve fikir üretildi.
+- İletişim etkin şekilde sürdürüldü ve toplantılara zamanında katınıldı.
+- Toplantılar dışında Whatsapptan sürekli iletişim kuruldu.
+- Projenin konusu  ve süreci daha detaylandırıldı.
 
 ---
