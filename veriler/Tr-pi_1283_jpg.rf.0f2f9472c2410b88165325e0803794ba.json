@@ -1,0 +1,26 @@
+[
+    {
+        "class_id": 2,
+        "class_name": "pituitary-tumor",
+        "x_center": 0.630605,
+        "y_center": 0.543978,
+        "width": 0.165333,
+        "height": 0.155142
+    },
+    {
+        "class_id": 2,
+        "class_name": "pituitary-tumor",
+        "x_center": 0.625787,
+        "y_center": 0.572166,
+        "width": 0.186262,
+        "height": 0.207108
+    },
+    {
+        "class_id": 2,
+        "class_name": "pituitary-tumor",
+        "x_center": 0.558819,
+        "y_center": 0.742806,
+        "width": 0.160952,
+        "height": 0.243598
+    }
+]

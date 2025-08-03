@@ -1,0 +1,18 @@
+[
+    {
+        "class_id": 0,
+        "class_name": "glioma",
+        "x_center": 0.310165,
+        "y_center": 0.500598,
+        "width": 0.201949,
+        "height": 0.194319
+    },
+    {
+        "class_id": 0,
+        "class_name": "glioma",
+        "x_center": 0.478723,
+        "y_center": 0.426445,
+        "width": 0.226124,
+        "height": 0.232978
+    }
+]

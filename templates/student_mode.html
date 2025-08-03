@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VEZİN - Öğrenci Modu</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #2563eb 100%);
+            color: white;
+            min-height: 100vh;
+        }
+
+        .medical-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: 0;
+        }
+
+        .container {
+            min-height: 100vh;
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 3rem;
+            animation: slideDown 0.8s ease-out;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .mode-badge {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            padding: 0.7rem 1.8rem;
+            border-radius: 2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+        }
+
+        .back-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateX(-5px);
+        }
+
+        .main-content {
+            animation: fadeInUp 0.8s ease-out 0.3s both;
+        }
+
+        .case-section {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 2rem;
+            padding: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: #f59e0b;
+        }
+
+        .clinical-info {
+            background: rgba(245, 158, 11, 0.1);
+            border-left: 4px solid #f59e0b;
+            padding: 1.5rem;
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .clinical-info h3 {
+            color: #f59e0b;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .clinical-info p {
+            color: #e2e8f0;
+            line-height: 1.6;
+            white-space: pre-line;
+        }
+
+        .case-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin: 2rem 0;
+        }
+
+        .image-section {
+            text-align: center;
+        }
+
+        .image-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            color: #60a5fa;
+        }
+
+        .case-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 1.5rem;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            border: 3px solid rgba(96, 165, 250, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .case-image:hover {
+            transform: scale(1.02);
+            border-color: rgba(96, 165, 250, 0.6);
+        }
+
+        .no-image-placeholder {
+            background: rgba(0, 0, 0, 0.3);
+            border: 2px dashed rgba(255, 255, 255, 0.3);
+            border-radius: 1.5rem;
+            padding: 3rem;
+            text-align: center;
+            color: #94a3b8;
+        }
+
+        .placeholder-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            opacity: 0.5;
+        }
+
+        .answer-section {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 1.5rem;
+            padding: 2rem;
+        }
+
+        .answer-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            color: #34d399;
+        }
+
+        .evaluation-textarea {
+            width: 100%;
+            min-height: 250px;
+            padding: 1.5rem;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 1rem;
+            line-height: 1.6;
+            resize: vertical;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .evaluation-textarea:focus {
+            outline: none;
+            border-color: #34d399;
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .evaluation-textarea::placeholder {
+            color: #94a3b8;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #34d399, #10b981);
+            border: none;
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 1rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            flex: 1;
+            box-shadow: 0 8px 25px rgba(52, 211, 153, 0.3);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 35px rgba(52, 211, 153, 0.4);
+        }
+
+        .clear-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 1rem;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .clear-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .feedback-section {
+            background: rgba(52, 211, 153, 0.1);
+            backdrop-filter: blur(20px);
+            border: 2px solid rgba(52, 211, 153, 0.3);
+            border-radius: 2rem;
+            padding: 3rem;
+            margin-top: 2rem;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .feedback-title {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: #34d399;
+        }
+
+        .student-answer {
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .student-answer h4 {
+            color: #f59e0b;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .student-answer p {
+            color: #e2e8f0;
+            line-height: 1.6;
+            white-space: pre-line;
+        }
+
+        .ai-feedback {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 1rem;
+            padding: 2rem;
+            margin: 1.5rem 0;
+        }
+
+        .ai-feedback h4 {
+            color: #60a5fa;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .ai-feedback p {
+            color: #e2e8f0;
+            line-height: 1.7;
+            white-space: pre-line;
+        }
+
+        .correct-answer {
+            background: rgba(96, 165, 250, 0.1);
+            border: 1px solid rgba(96, 165, 250, 0.3);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .correct-answer h4 {
+            color: #60a5fa;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .correct-answer p {
+            color: #e2e8f0;
+            line-height: 1.6;
+            white-space: pre-line;
+        }
+
+        .navigation-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 1rem;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.3);
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
+        }
+
+        .nav-btn.secondary {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            box-shadow: 0 6px 20px rgba(245, 158, 11, 0.3);
+        }
+
+        .nav-btn.secondary:hover {
+            box-shadow: 0 10px 30px rgba(245, 158, 11, 0.4);
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 2rem;
+            border: 2px dashed rgba(255, 255, 255, 0.2);
+        }
+
+        .empty-state-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.6;
+        }
+
+        .empty-state h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #94a3b8;
+        }
+
+        .empty-state p {
+            color: #64748b;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+            .case-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .header {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+            
+            .container {
+                padding: 1rem;
+            }
+            
+            .case-section {
+                padding: 2rem;
+            }
+            
+            .button-group {
+                flex-direction: column;
+            }
+            
+            .navigation-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="medical-grid"></div>
+    
+    <div class="container">
+        <div class="header">
+            <div class="logo-section">
+                <h1 class="logo">🧠 VEZİN</h1>
+                <div class="mode-badge">
+                    <span>🎓</span>
+                    <span>Öğrenci Modu</span>
+                </div>
+            </div>
+            <a href="/" class="back-btn">
+                <span>←</span>
+                <span>Ana Sayfa</span>
+            </a>
+        </div>
+
+        <div class="main-content">
+            {% if case %}
+            <!-- Vaka Bilgileri -->
+            {% if case.clinical_info %}
+            <div class="clinical-info">
+                <h3>📋 Klinik Bilgiler</h3>
+                <p>{{ case.clinical_info }}</p>
+            </div>
+            {% endif %}
+
+            <div class="case-section">
+                <h2 class="section-title">
+                    <span>📚</span>
+                    <span>Radyoloji Vaka Analizi</span>
+                </h2>
+
+                <div class="case-container">
+                    <!-- Görüntü Bölümü -->
+                    <div class="image-section">
+                        <h3 class="image-title">
+                            <span>🖼️</span>
+                            <span>Radyolojik Görüntü</span>
+                        </h3>
+                        {% if case.image %}
+                            <img src="{{ url_for('static', filename='images/' + case.image) }}" 
+                                 alt="Radyolojik Görüntü" class="case-image"
+                                 onerror="this.style.display='none'; this.parentNode.innerHTML+='<div class=\'no-image-placeholder\'><div class=\'placeholder-icon\'>🖼️</div><p>Görüntü bulunamadı<br>{{ case.image }}</p></div>'">
+                        {% else %}
+                            <div class="no-image-placeholder">
+                                <div class="placeholder-icon">🖼️</div>
+                                <p>Görüntü yüklenemedi</p>
+                            </div>
+                        {% endif %}
+                    </div>
+
+                    <!-- Değerlendirme Bölümü -->
+                    <div class="answer-section">
+                        <h3 class="answer-title">
+                            <span>✍️</span>
+                            <span>Radyolojik Değerlendirme</span>
+                        </h3>
+                        <form method="POST" action="/student">
+                            <textarea name="student_text" class="evaluation-textarea"
+                                      placeholder="Bu görüntüyü değerlendirin:
+
+1. Görüntü türü ve kalitesi
+2. Normal anatomik yapılar  
+3. Patolojik bulgular (varsa)
+4. Ayırıcı tanı
+5. Önerileriniz" 
+                                      required>{{ ogrenci_cevap or '' }}</textarea>
+                            
+                            {% if case.dogru_cevap %}
+                            <input type="hidden" name="dogru_cevap" value="{{ case.dogru_cevap }}">
+                            {% endif %}
+                            
+                            {% if case.image %}
+                            <input type="hidden" name="image" value="{{ case.image }}">
+                            {% endif %}
+                            
+                            <div class="button-group">
+                                <button type="submit" class="submit-btn">📝 Değerlendirme Al</button>
+                                <button type="button" class="clear-btn" onclick="clearText()">🗑️ Temizle</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            {% else %}
+            <!-- Vaka yoksa -->
+            <div class="empty-state">
+                <div class="empty-state-icon">📚</div>
+                <h2>Eğitim Vakası Yükleniyor...</h2>
+                <p>Eğitim vakalarına yönlendiriliyorsunuz...</p>
+                <a href="/egitim" class="nav-btn">
+                    <span>📚</span>
+                    <span>Eğitim Vakalarına Git</span>
+                </a>
+            </div>
+            {% endif %}
+
+            <!-- Geri Bildirim Bölümü -->
+            {% if feedback %}
+            <div class="feedback-section">
+                <h3 class="feedback-title">
+                    <span>🤖</span>
+                    <span>AI Eğitmen Geri Bildirimi</span>
+                </h3>
+                
+                {% if ogrenci_cevap %}
+                <div class="student-answer">
+                    <h4>👨‍🎓 Sizin Cevabınız:</h4>
+                    <p>{{ ogrenci_cevap }}</p>
+                </div>
+                {% endif %}
+                
+                <div class="ai-feedback">
+                    <h4>📊 Değerlendirme ve Öneriler:</h4>
+                    <p>{{ feedback }}</p>
+                </div>
+                
+                {% if case and case.dogru_cevap %}
+                <div class="correct-answer">
+                    <h4>✅ Doğru/Örnek Cevap:</h4>
+                    <p>{{ case.dogru_cevap }}</p>
+                </div>
+                {% endif %}
+            </div>
+            {% endif %}
+
+            <!-- Navigasyon Butonları -->
+            <div class="navigation-buttons">
+                <a href="/egitim" class="nav-btn">
+                    <span>📚</span>
+                    <span>Yeni Vaka</span>
+                </a>
+                <a href="/doctor" class="nav-btn secondary">
+                    <span>👨‍⚕️</span>
+                    <span>Doktor Moduna Geç</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function clearText() {
+            document.querySelector('textarea[name="student_text"]').value = '';
+        }
+
+        // Textarea auto-resize
+        const textarea = document.querySelector('.evaluation-textarea');
+        if (textarea) {
+            textarea.addEventListener('input', function() {
+                this.style.height = 'auto';
+                this.style.height = Math.max(250, this.scrollHeight) + 'px';
+            });
+        }
+    </script>
+</body>
+</html>

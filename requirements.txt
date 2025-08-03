@@ -1,0 +1,10 @@
+flask==2.0.1
+Pillow==9.5.0
+google-generativeai==0.1.0rc3
+python-dotenv==1.0.0
+ultralytics==8.0.145
+langchain==0.0.250
+langchain-community==0.0.5
+langchain-google-genai==0.0.3
+chromadb==0.4.14
+nest-asyncio==1.5.8

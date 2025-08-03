@@ -1,0 +1,7 @@
+Gliomas are tumors arising from glial cells in the central nervous system. They account for approximately 30% of all brain tumors.
+
+Types of gliomas include astrocytomas, oligodendrogliomas, ependymomas, and glioblastoma multiforme (GBM). Glioblastoma is the most aggressive form.
+
+Symptoms depend on the tumor’s location and include headaches, seizures, and focal neurological deficits.
+
+MRI with contrast is the imaging modality of choice. Treatment often involves surgical debulking, radiotherapy, and temozolomide chemotherapy. The prognosis depends on tumor grade and genetic markers (e.g., IDH1 mutation, MGMT methylation).

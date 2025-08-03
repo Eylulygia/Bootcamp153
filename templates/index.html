@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VEZİN - AI Radyoloji Sistemi</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #2563eb 100%);
+            color: white;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        .medical-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: 0;
+        }
+
+        .container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 4rem;
+            animation: slideDown 1s ease-out;
+        }
+
+        .logo {
+            font-size: 4.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #ffffff;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            position: relative;
+        }
+
+        .logo::before {
+            content: "🧠";
+            position: absolute;
+            left: -5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 3rem;
+            animation: pulse 2s infinite;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: #cbd5e1;
+            font-weight: 300;
+            margin-bottom: 0.5rem;
+        }
+
+        .version {
+            font-size: 0.9rem;
+            color: #64748b;
+            background: rgba(255,255,255,0.1);
+            padding: 0.3rem 1rem;
+            border-radius: 2rem;
+            display: inline-block;
+        }
+
+        .main-panel {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 3rem;
+            padding: 3rem;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            animation: slideUp 1s ease-out 0.3s both;
+        }
+
+        .mode-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            min-width: 500px;
+        }
+
+        .mode-button {
+            background: rgba(255, 255, 255, 0.15);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 2rem;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mode-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .mode-button:hover::before {
+            left: 100%;
+        }
+
+        .mode-button:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 255, 255, 0.6);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .mode-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            display: block;
+            filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
+        }
+
+        .mode-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .mode-desc {
+            font-size: 0.95rem;
+            color: #e2e8f0;
+            line-height: 1.5;
+        }
+
+        .doctor-mode {
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.2), rgba(22, 163, 74, 0.1));
+            border-color: rgba(34, 197, 94, 0.4);
+        }
+
+        .doctor-mode:hover {
+            border-color: rgba(34, 197, 94, 0.8);
+            box-shadow: 0 15px 40px rgba(34, 197, 94, 0.2);
+        }
+
+        .student-mode {
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.2), rgba(234, 88, 12, 0.1));
+            border-color: rgba(249, 115, 22, 0.4);
+        }
+
+        .student-mode:hover {
+            border-color: rgba(249, 115, 22, 0.8);
+            box-shadow: 0 15px 40px rgba(249, 115, 22, 0.2);
+        }
+
+        .status-bar {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(10px);
+            padding: 0.8rem 2rem;
+            border-radius: 2rem;
+            font-size: 0.85rem;
+            color: #94a3b8;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: #22c55e;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 0.5rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.7;
+                transform: scale(1.1);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mode-grid {
+                grid-template-columns: 1fr;
+                min-width: 300px;
+            }
+            
+            .logo {
+                font-size: 3.5rem;
+            }
+            
+            .logo::before {
+                left: -4rem;
+                font-size: 2.5rem;
+            }
+            
+            .main-panel {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="medical-grid"></div>
+    
+    <div class="container">
+        <div class="header">
+            <h1 class="logo">VEZİN</h1>
+            <p class="subtitle">AI Destekli Radyoloji Analiz Sistemi</p>
+            <span class="version">v2.0 Beta</span>
+        </div>
+
+        <div class="main-panel">
+            <div class="mode-grid">
+                <a href="/doctor" class="mode-button doctor-mode">
+                    <span class="mode-icon">⚕️</span>
+                    <h2 class="mode-title">Doktor Modu</h2>
+                    <p class="mode-desc">Profesyonel tanı ve analiz araçları</p>
+                </a>
+
+                <a href="/student" class="mode-button student-mode">
+                    <span class="mode-icon">📚</span>
+                    <h2 class="mode-title">Öğrenci Modu</h2>
+                    <p class="mode-desc">Eğitim vakaları ve pratik</p>
+                </a>
+            </div>
+        </div>
+
+        <div class="status-bar">
+            <span class="status-dot"></span>
+            Sistem Aktif • AI Model Hazır
+        </div>
+    </div>
+</body>
+</html>

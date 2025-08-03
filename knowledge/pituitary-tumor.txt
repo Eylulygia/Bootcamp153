@@ -1,0 +1,7 @@
+Pituitary tumors are abnormal growths located in the pituitary gland, a small endocrine organ at the base of the brain.
+
+Most pituitary tumors are benign adenomas. Common types include prolactinomas, ACTH-producing tumors, and growth hormone-secreting adenomas.
+
+These tumors can affect hormone production, causing systemic symptoms such as Cushing’s disease or acromegaly. Visual disturbances may occur if the tumor compresses the optic chiasm.
+
+Diagnosis typically involves MRI imaging and serum hormone level analysis. Treatment options include surgical resection (often via transsphenoidal approach), dopamine agonists (e.g., cabergoline), and radiotherapy.

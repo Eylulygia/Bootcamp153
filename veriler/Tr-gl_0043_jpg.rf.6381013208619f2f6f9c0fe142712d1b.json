@@ -1,0 +1,18 @@
+[
+    {
+        "class_id": 1,
+        "class_name": "meningioma",
+        "x_center": 0.443964,
+        "y_center": 0.374151,
+        "width": 0.200889,
+        "height": 0.167555
+    },
+    {
+        "class_id": 0,
+        "class_name": "glioma",
+        "x_center": 0.441126,
+        "y_center": 0.372571,
+        "width": 0.216069,
+        "height": 0.173947
+    }
+]

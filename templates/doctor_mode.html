@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beyin MR Analiz Sistemi</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🧠 VEZİN - Beyin MR Analiz Sistemi</h1>
+            <p>Yapay zeka destekli tümör tespit ve raporlama sistemi</p>
+        </header>
+
+        <main>
+            <div class="upload-section">
+                <div class="upload-container" id="dropZone">
+                    <form id="uploadForm">
+                        <div class="upload-area">
+                            <img src="{{ url_for('static', filename='images/upload-icon.png') }}" alt="Upload" id="uploadIcon">
+                            <p>MR görüntüsünü buraya sürükleyin veya seçin</p>
+                            <input type="file" id="fileInput" accept=".jpg,.jpeg,.png" hidden>
+                            <button type="button" class="select-button" onclick="document.getElementById('fileInput').click()">
+                                Dosya Seç
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="results-section" style="display: none;">
+                <div class="results-container">
+                    <div class="image-container">
+                        <h3>📷 Yüklenen MR Görüntüsü</h3>
+                        <img id="uploadedImage" src="" alt="Yüklenen MR">
+                    </div>
+                    <div class="analysis-container">
+                        <h3>🔬 Analiz Sonucu</h3>
+                        <div class="analysis-details">
+                            <div class="tumor-info">
+                                <p><strong>🎯 Tümör Tipi:</strong> <span id="tumorType">-</span></p>
+                                <p><strong>📏 Boyut:</strong> <span id="tumorSize">-</span> cm</p>
+                            </div>
+                            <div class="explanation">
+                                <h4>📋 Tıbbi Açıklama</h4>
+                                <p id="explanation">-</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="new-analysis" onclick="resetForm()">Yeni Analiz</button>
+            </div>
+
+            <div id="loading" class="loading" style="display: none;">
+                <div class="spinner"></div>
+                <p>Yapay zeka analiz yapıyor, lütfen bekleyin...</p>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.getElementById('fileInput').addEventListener('change', handleFileSelect);
+        const dropZone = document.getElementById('dropZone');
+
+        // Sürükle-bırak olayları
+        dropZone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            dropZone.classList.add('dragover');
+        });
+
+        dropZone.addEventListener('dragleave', () => {
+            dropZone.classList.remove('dragover');
+        });
+
+        dropZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            dropZone.classList.remove('dragover');
+            const file = e.dataTransfer.files[0];
+            handleFile(file);
+        });
+
+        function handleFileSelect(e) {
+            const file = e.target.files[0];
+            handleFile(file);
+        }
+
+        function showToast(message, type = 'error') {
+            const toast = document.createElement('div');
+            toast.className = `toast ${type}`;
+            toast.textContent = message;
+            document.body.appendChild(toast);
+
+            setTimeout(() => {
+                toast.remove();
+            }, 3000);
+        }
+
+        function handleFile(file) {
+            if (!file) return;
+
+            // Dosya tipini kontrol et
+            const validTypes = ['image/jpeg', 'image/jpg', 'image/png'];
+            if (!validTypes.includes(file.type)) {
+                showToast('Lütfen sadece JPG veya PNG formatında dosya yükleyin.');
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('file', file);
+
+            // Loading göster
+            document.querySelector('.upload-section').style.display = 'none';
+            document.getElementById('loading').style.display = 'flex';
+
+            fetch('/upload', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    throw new Error(data.error);
+                }
+                displayResults(file, data);
+                showToast('Analiz başarıyla tamamlandı!', 'success');
+            })
+            .catch(error => {
+                showToast('Hata: ' + error.message);
+                resetForm();
+            });
+        }
+
+        function displayResults(file, data) {
+            // Loading gizle
+            document.getElementById('loading').style.display = 'none';
+            
+            // Sonuç bölümünü göster
+            document.querySelector('.results-section').style.display = 'block';
+            
+            // Yüklenen görüntüyü göster
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                document.getElementById('uploadedImage').src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+
+            // Sonuçları doldur
+            document.getElementById('tumorType').textContent = data.tumor_type;
+            document.getElementById('tumorSize').textContent = data.size_cm;
+            document.getElementById('explanation').textContent = data.llm_explanation;
+        }
+
+        function resetForm() {
+            document.querySelector('.upload-section').style.display = 'block';
+            document.querySelector('.results-section').style.display = 'none';
+            document.getElementById('fileInput').value = '';
+            document.getElementById('uploadedImage').src = '';
+            showToast('Yeni analiz için hazır!', 'success');
+        }
+    </script>
+</body>
+</html>
