@@ -6,7 +6,7 @@
 - **Esra Gökce** : Developer 
 - **Helin Yaren Batı** : Developer  
 - **Tolga Kaya** : Product Owner  
-- **Şevval Savaş** : Scrum Master 
+- **Şevval Savaş** : Scrum Master
 
 
 ---
