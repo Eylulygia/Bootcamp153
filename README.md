@@ -212,3 +212,47 @@ Daily Scrum toplantısı örneği `.jpeg` formatında Drive linki ile birlikte p
 - Projenin konusu  ve süreci daha detaylandırıldı.
 
 ---
+
+## Sprint 3
+
+### Sprint içinde tamamlanması tahmin edilen puan: **100 Puan**
+
+**Puan tamamlama mantığı:**  
+Toplamda proje boyunca tamamlanması gereken 300 puanlık backlog bulunmaktadır. 3 sprint'e bölündüğünde ilk sprintte 100 ile başlaması gerektiğine karar verildi.
+
+---
+
+### Daily Scrum
+Daily Scrum toplantılarının zamansal sebeplerden ötürü **Whatsapp üzerinden** yapılmasına karar verilmiştir.  
+Daily Scrum toplantısı örneği `.jpeg` formatında Drive linki ile birlikte paylaşılacaktır.
+
+[Google Meet Toplantı Ekran Görüntüleri](https://drive.google.com/drive/folders/1wCZDMRQ7IockN_D0YT-pZ2V6VZ-9cMXZ?usp=sharing)
+
+[Whatsapp Ekran Görüntüleri](https://drive.google.com/drive/folders/1GR3ou2x0oFUVNIUA04mgGUNG7XnEPVQP?usp=sharing)
+
+
+---
+
+### Sprint Board Update
+
+
+---
+### Ürünün Durumu
+- Datasetinde Yolo kullanarak etiketlemeler yapıldı.
+- Etiketlemelere göre 3 çeşit beyin kanseri tipi belirlenmiştir:Pituitary,Glioma ve Meningioma
+- Etiketleme sürecin fotoğrafları aşağıdadır:
+  
+
+---
+### Sprint Review
+
+**Alınan Kararlar:**
+
+
+---
+
+### Sprint Retrospective
+
+
+
+---
